@@ -1,0 +1,5 @@
+CampusHugo Pro
+Recurso: Base de datos técnica
+Tipo: Excel/Power BI/PDF
+
+Este archivo es una muestra. Reemplázalo por tu Excel, PBIX, PDF o ZIP real.
