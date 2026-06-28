@@ -1,0 +1,10 @@
+-- CampusHugo Pro - Esquema inicial para Supabase
+create table if not exists profiles (id uuid primary key default gen_random_uuid(), email text unique not null, role text default 'student', created_at timestamptz default now());
+create table if not exists courses (id uuid primary key default gen_random_uuid(), slug text unique not null, title text not null, description text, category text, is_premium boolean default false, created_at timestamptz default now());
+create table if not exists lessons (id uuid primary key default gen_random_uuid(), course_id uuid references courses(id) on delete cascade, title text not null, position int default 1, is_published boolean default false, created_at timestamptz default now());
+create table if not exists lesson_blocks (id uuid primary key default gen_random_uuid(), lesson_id uuid references lessons(id) on delete cascade, block_type text not null, content jsonb not null default '{}'::jsonb, position int default 1);
+create table if not exists resources (id uuid primary key default gen_random_uuid(), title text not null, category text, file_url text, is_premium boolean default false, price numeric default 0, created_at timestamptz default now());
+create table if not exists subscriptions (id uuid primary key default gen_random_uuid(), user_email text not null, plan text not null, status text default 'active', starts_at timestamptz default now(), ends_at timestamptz);
+create table if not exists sales (id uuid primary key default gen_random_uuid(), user_email text, product_type text, product_id uuid, amount numeric default 0, status text default 'paid', created_at timestamptz default now());
+create table if not exists downloads (id uuid primary key default gen_random_uuid(), user_email text, resource_id uuid references resources(id), created_at timestamptz default now());
+insert into courses(slug,title,description,category,is_premium) values ('excel-basico','Excel Básico','Curso interactivo desde cero','Excel',false) on conflict(slug) do nothing;
