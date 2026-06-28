@@ -1,139 +1,23 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CampusHugo Pro Oficial</title>
-  <meta name="description" content="Cursos interactivos de Excel, Power BI, SQL e IA aplicada al trabajo." />
-  <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="stylesheet" href="css/styles.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CampusHugo Pro Oficial v3</title>
+<style>
+:root{--bg:#eef4fb;--dark:#07142b;--blue:#2463eb;--green:#16b56b;--card:#fff;--muted:#64748b;--line:#d8e2ef}*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:#0f172a}.top{position:sticky;top:0;z-index:10;background:linear-gradient(90deg,#07142b,#0b1b39);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:12px 16px;box-shadow:0 6px 20px #0002}.brand{display:flex;gap:10px;align-items:center;font-weight:800}.logo{width:36px;height:36px;border-radius:12px;background:#4f46e5;display:grid;place-items:center}.nav{display:flex;gap:18px;align-items:center}.nav a,.nav button{color:#fff;background:none;border:0;text-decoration:none;font-weight:600}.menu{display:none}.btn{border:0;border-radius:12px;padding:11px 16px;font-weight:800;background:#e9f0ff;color:#17337a;box-shadow:0 8px 22px #0b5cff18}.primary{background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff}.green{background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff}.wrap{max-width:1180px;margin:auto;padding:28px 18px}.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:22px;align-items:center;padding:34px 0}.badge{display:inline-block;padding:9px 12px;border-radius:999px;background:#dbeafe;color:#1d4ed8;font-weight:800}.hero h1{font-size:clamp(38px,7vw,70px);line-height:.95;margin:20px 0}.hero p{font-size:18px;color:#475569;max-width:650px}.panel{background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:0 20px 50px #1234aa15}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{background:#f1f5ff;border-radius:16px;padding:14px}.stat b{font-size:28px;display:block}.section-title{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:28px 0 15px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 12px 34px #10235a10}.card h3{margin:14px 0}.pill{display:inline-block;font-size:12px;font-weight:800;color:#1d4ed8;background:#eaf2ff;border-radius:999px;padding:6px 10px}.card p{color:#475569;min-height:58px}.meta{color:#64748b;font-size:13px;display:flex;gap:12px;flex-wrap:wrap}.lesson{display:none;background:#fff;border-top:1px solid var(--line);min-height:100vh}.lesson.active{display:block}.lesson-head{position:sticky;top:60px;background:#fff;z-index:8;border-bottom:1px solid var(--line)}.lesson-layout{display:grid;grid-template-columns:260px 1fr 300px;gap:18px}.side{background:#07142b;color:#dbeafe;border-radius:24px;padding:18px}.side h3{color:white}.step{display:flex;gap:10px;align-items:center;padding:12px;border-radius:12px;margin:8px 0;cursor:pointer}.step.on{background:#1d4ed8;color:#fff}.dot{width:18px;height:18px;border-radius:50%;border:2px solid currentColor;display:grid;place-items:center;font-size:10px}.stage{background:#f8fbff;border:1px solid var(--line);border-radius:24px;padding:20px}.video-box{height:330px;background:linear-gradient(180deg,#dbeafe,#fff);border-radius:20px;position:relative;overflow:hidden;border:1px solid var(--line)}.excel{position:absolute;left:8%;right:8%;top:20%;bottom:16%;background:#fff;border:1px solid #aab7ca;display:grid;grid-template-columns:46px repeat(5,1fr);grid-auto-rows:42px;box-shadow:0 15px 40px #0002}.excel div,.excel button{border:1px solid #d5dde9;background:#fff}.head{background:#edf2f7!important;font-weight:800;display:grid;place-items:center}.cell{display:grid;place-items:center;border:1px solid #d5dde9;background:#fff}.target{outline:4px solid #22c55e!important;box-shadow:inset 0 0 0 2px #16a34a}.label{position:absolute;background:#2563eb;color:#fff;padding:9px 12px;border-radius:10px;font-weight:800}.l1{top:10%;left:45%}.l2{top:44%;right:5%;background:#7c3aed}.l3{bottom:28%;left:8%;background:#f97316}.practice{margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px}.formula{width:100%;max-width:420px;border:1px solid var(--line);border-radius:14px;padding:14px;font-size:18px}.ok{background:#dcfce7;color:#166534;border-radius:14px;padding:12px;font-weight:800}.bad{background:#fee2e2;color:#991b1b;border-radius:14px;padding:12px;font-weight:800}.teacher{background:#f5f3ff;border:1px solid #ddd6fe;border-radius:22px;padding:18px}.avatar{width:74px;height:74px;border-radius:50%;background:#2563eb;color:#fff;display:grid;place-items:center;font-size:32px;margin-bottom:12px}.admin{background:#0b1220;color:#fff;padding:30px 0}.admin .card{background:#111c31;color:#fff;border-color:#24344f}.admin input,.admin textarea,.admin select{width:100%;padding:12px;border-radius:12px;border:1px solid #334155;background:#0f172a;color:#fff;margin:7px 0}.notice{position:fixed;bottom:16px;left:16px;right:16px;background:#07142b;color:#fff;padding:14px 16px;border-radius:16px;display:none;z-index:50}.notice.show{display:block}@media(max-width:850px){.nav{display:none;position:absolute;top:62px;left:0;right:0;background:#07142b;flex-direction:column;padding:18px}.nav.open{display:flex}.menu{display:block}.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.lesson-layout{grid-template-columns:1fr}.side{order:2}.teacher{order:3}.lesson-head{top:58px}.video-box{height:250px}.wrap{padding:20px 14px}.card{padding:18px}.top{padding:10px 12px}.hero h1{font-size:42px}.stats{grid-template-columns:1fr 1fr 1fr}.excel{left:3%;right:3%;grid-auto-rows:34px}.label{font-size:12px}.l1{left:35%}}
+</style>
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#inicio" aria-label="CampusHugo inicio">
-      <span class="brand-mark">CH</span>
-      <span><b>CampusHugo</b><small>Pro Oficial</small></span>
-    </a>
-    <button class="menu-btn" id="menuBtn">☰</button>
-    <nav id="nav" class="nav">
-      <a href="#cursos">Cursos</a>
-      <a href="#recursos">Recursos</a>
-      <a href="#leccion-demo">Lección demo</a>
-      <a href="#planes">Planes</a>
-      <button class="btn ghost" id="openLoginBtn">Ingresar</button>
-    </nav>
-  </header>
-
-  <main>
-    <section id="inicio" class="hero">
-      <div class="hero-copy">
-        <span class="pill">OFICIAL v2 • LECCIÓN INTERACTIVA ACTIVA</span>
-        <h1>Aprende practicando con cursos interactivos tipo presentación visual.</h1>
-        <p>CampusHugo Pro combina videos cortos, imágenes, ejercicios, quiz, descargas y un constructor para crear lecciones desde el panel administrador. Esta versión ya abre una lección interactiva real al tocar Entrar.</p>
-        <div class="actions">
-          <a href="#leccion-demo" class="btn primary">Ver curso interactivo ahora</a>
-          <button class="btn secondary" id="adminShortcut">Panel admin</button>
-        </div>
-      </div>
-      <div class="hero-card">
-        <div class="phone-preview">
-          <div class="phone-top"></div>
-          <h3>Lección 1</h3>
-          <p>Conociendo Excel</p>
-          <div class="progress"><span style="width:45%"></span></div>
-          <div class="mini-excel"><span>A</span><span>B</span><span>C</span><b>1</b><i></i><i></i><i></i><b>2</b><i></i><i class="active"></i><i></i></div>
-          <button class="btn primary full">Continuar</button>
-        </div>
-      </div>
-    </section>
-
-    <section id="cursos" class="section">
-      <div class="section-head"><span class="pill">Rutas</span><h2>Cursos interactivos</h2><p>Cargados desde Supabase cuando configures tus claves. Mientras tanto se muestran datos base.</p></div>
-      <div id="courseGrid" class="grid cards"></div>
-    </section>
-
-    <section id="recursos" class="section alt">
-      <div class="section-head"><span class="pill">Tienda</span><h2>Recursos y plantillas</h2><p>Archivos Excel, Power BI, SQL, ZIP, PDF, videos e imágenes gestionados desde el panel.</p></div>
-      <div id="resourceGrid" class="grid cards"></div>
-    </section>
-
-    <section id="leccion-demo" class="section">
-      <div class="section-head"><span class="pill">Demo</span><h2>Ejemplo de lección interactiva</h2><p>Esta es la base del motor tipo Prezi: bloques, práctica, quiz y puntos.</p></div>
-      <div class="lesson-shell">
-        <aside class="lesson-side">
-          <h3>Excel Básico</h3>
-          <div class="lesson-step active" data-step="0">1. Bienvenida</div>
-          <div class="lesson-step" data-step="1">2. Imagen guiada</div>
-          <div class="lesson-step" data-step="2">3. Práctica</div>
-          <div class="lesson-step" data-step="3">4. Fórmula</div>
-          <div class="lesson-step" data-step="4">5. Quiz</div>
-        </aside>
-        <article class="lesson-stage" id="lessonStage"></article>
-      </div>
-    </section>
-
-    <section id="planes" class="section alt">
-      <div class="section-head"><span class="pill">Monetización</span><h2>Planes</h2></div>
-      <div class="grid pricing">
-        <div class="price"><h3>Gratis</h3><b>S/ 0</b><p>Cursos iniciales y recursos libres.</p></div>
-        <div class="price featured"><h3>Pro mensual</h3><b>S/ 29</b><p>Cursos premium, descargas y certificados.</p></div>
-        <div class="price"><h3>Empresas</h3><b>A cotizar</b><p>Capacitación y dashboards personalizados.</p></div>
-      </div>
-    </section>
-
-    <section id="admin" class="admin hidden">
-      <div class="admin-head">
-        <div><span class="pill">Administrador real</span><h2>Panel CampusHugo</h2><p>Solo visible para usuarios con rol admin en Supabase.</p></div>
-        <button class="btn ghost" id="logoutBtn">Cerrar sesión</button>
-      </div>
-      <div class="kpis">
-        <div><b id="kpiUsers">0</b><span>Usuarios</span></div>
-        <div><b id="kpiSubs">0</b><span>Suscripciones</span></div>
-        <div><b id="kpiSales">S/ 0</b><span>Ventas</span></div>
-        <div><b id="kpiDownloads">0</b><span>Descargas</span></div>
-      </div>
-      <div class="admin-grid">
-        <form id="resourceForm" class="panel">
-          <h3>Subir recurso</h3>
-          <input name="title" placeholder="Título del recurso" required />
-          <select name="category"><option>Excel</option><option>Power BI</option><option>SQL</option><option>IA</option><option>Plantilla</option></select>
-          <select name="access"><option value="free">Gratis</option><option value="premium">Premium</option></select>
-          <input name="price" type="number" min="0" step="0.01" placeholder="Precio" />
-          <textarea name="description" placeholder="Descripción"></textarea>
-          <input name="file" type="file" accept=".xlsx,.xls,.xlsm,.csv,.pbix,.pbit,.sql,.pdf,.docx,.pptx,.zip,.rar,.jpg,.jpeg,.png,.webp,.mp4,.webm" />
-          <button class="btn primary full">Guardar recurso</button>
-          <p class="hint">Se guarda en Supabase Storage bucket: <b>recursos</b>.</p>
-        </form>
-        <form id="lessonForm" class="panel">
-          <h3>Crear lección interactiva</h3>
-          <input name="lesson_title" placeholder="Título de la lección" required />
-          <select name="course"><option>Excel Básico</option><option>Power BI Básico</option><option>SQL Básico</option><option>IA para oficina</option></select>
-          <select name="block_type"><option value="video">Bloque video</option><option value="image">Bloque imagen</option><option value="practice">Bloque práctica</option><option value="quiz">Bloque quiz</option><option value="download">Bloque descarga</option></select>
-          <textarea name="content" placeholder="Contenido, instrucciones o URL"></textarea>
-          <button class="btn primary full">Guardar bloque</button>
-          <p class="hint">Luego agregaremos arrastrar y soltar bloques.</p>
-        </form>
-      </div>
-      <div class="panel">
-        <h3>Recursos cargados</h3>
-        <div id="adminResources" class="table-like"></div>
-      </div>
-    </section>
-  </main>
-
-  <div class="modal hidden" id="loginModal">
-    <form class="login-card" id="authForm">
-      <button type="button" class="x" id="closeLogin">×</button>
-      <h2>Ingresar / Registrarse</h2>
-      <input name="email" type="email" placeholder="Correo" required />
-      <input name="password" type="password" placeholder="Contraseña" required />
-      <div class="row"><button class="btn primary" name="mode" value="login">Ingresar</button><button class="btn secondary" name="mode" value="signup">Crear cuenta</button></div>
-      <p id="authMsg" class="hint"></p>
-    </form>
-  </div>
-
-  <a class="whatsapp" href="https://wa.me/51999999999?text=Hola%20quiero%20informaci%C3%B3n%20de%20CampusHugo" target="_blank">WhatsApp</a>
-  <script src="js/app.js?v=2"></script>
-</body>
-</html>
+<header class="top"><div class="brand"><div class="logo">CH</div><div>CampusHugo Pro<br><small>Excel • Power BI • SQL • IA</small></div></div><button class="menu" onclick="toggleMenu()">☰</button><nav id="nav" class="nav"><a href="#inicio">Inicio</a><a href="#cursos">Cursos</a><a href="#admin">Admin</a><button class="btn primary" onclick="showLogin()">Ingresar</button></nav></header>
+<main id="inicio" class="wrap">
+<section class="hero"><div><span class="badge">OFICIAL v3 • LECCIÓN INTERACTIVA ACTIVA</span><h1>Aprende viendo, tocando y practicando.</h1><p>Esta versión sí abre una lección interactiva al tocar Entrar en Excel Básico. También incluye panel admin base y SQL para Supabase.</p><button class="btn primary" onclick="openLesson()">Probar lección</button> <a class="btn" href="#cursos">Ver cursos</a></div><div class="panel"><h3>Panel rápido</h3><div class="stats"><div class="stat"><b>30</b>Cursos</div><div class="stat"><b>20</b>Plantillas</div><div class="stat"><b>6</b>Herramientas</div></div><p>Ruta sugerida: Excel → Power BI → SQL → IA.</p></div></section>
+<section id="cursos"><div class="section-title"><h2>Rutas y cursos</h2><input id="search" placeholder="Buscar curso..." oninput="renderCourses()" style="padding:13px;border-radius:14px;border:1px solid var(--line);min-width:260px"></div><div id="courseGrid" class="grid"></div></section>
+</main>
+<section id="leccion" class="lesson"><div class="lesson-head"><div class="wrap" style="padding-top:14px;padding-bottom:14px;display:flex;justify-content:space-between;gap:10px;align-items:center"><b>Excel Básico > Módulo 1 > Lección interactiva</b><button class="btn" onclick="closeLesson()">Salir</button></div></div><div class="wrap lesson-layout"><aside class="side"><h3>Excel Básico</h3><p>Nivel 1 - Desde cero</p><div class="step on" onclick="setStep(0)"><span class="dot">1</span>Bienvenida</div><div class="step" onclick="setStep(1)"><span class="dot">2</span>Conocer interfaz</div><div class="step" onclick="setStep(2)"><span class="dot">3</span>Práctica B5</div><div class="step" onclick="setStep(3)"><span class="dot">4</span>Fórmula SUMA</div><div class="step" onclick="setStep(4)"><span class="dot">5</span>Quiz final</div><hr><p><b>XP:</b> <span id="xp">0</span></p></aside><section><h1 id="lessonTitle">1. Bienvenida</h1><div id="stage" class="stage"></div></section><aside class="teacher"><div class="avatar">👨‍🏫</div><h3>Profesor virtual</h3><p id="teacherText">Bienvenido. Aprende con pasos cortos, imágenes y práctica.</p><hr><h4>Puntos clave</h4><ul><li>Lecciones tipo Prezi.</li><li>Práctica dentro de la web.</li><li>Retroalimentación inmediata.</li></ul></aside></div></section>
+<section id="admin" class="admin"><div class="wrap"><h2>Panel administrador real preparado</h2><p>Cuando pegues la URL y ANON KEY de Supabase, este panel guardará cursos, lecciones y recursos.</p><div class="grid"><div class="card"><h3>Crear recurso</h3><input placeholder="Título"><select><option>Excel</option><option>Power BI</option><option>SQL</option><option>IA</option></select><input type="number" placeholder="Precio"><input type="file"><button class="btn green" onclick="toast('Base lista: al conectar Supabase guardará el archivo en Storage')">Guardar recurso</button></div><div class="card"><h3>Crear lección interactiva</h3><input placeholder="Título de la lección"><select><option>Video</option><option>Imagen</option><option>Práctica Excel</option><option>Quiz</option><option>Descarga</option></select><textarea placeholder="Contenido o instrucción"></textarea><button class="btn green" onclick="toast('Constructor base listo para integrar con Supabase')">Guardar bloque</button></div><div class="card"><h3>Dashboard</h3><p><b>Suscripciones:</b> 24</p><p><b>Ventas:</b> S/ 1,240</p><p><b>Descargas:</b> 376</p><p><b>Curso más visto:</b> Excel Básico</p></div></div></div></section>
+<div id="login" style="display:none;position:fixed;inset:0;background:#0008;z-index:60;place-items:center"><div class="panel" style="width:min(420px,92vw)"><h2>Ingresar</h2><p>Demo local. Luego se conecta con Supabase.</p><input style="width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);margin:6px 0" value="admin@campushugo.com"><input style="width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);margin:6px 0" value="admin123" type="password"><button class="btn primary" onclick="document.getElementById('login').style.display='none';location.hash='admin';toast('Admin abierto')">Entrar</button> <button class="btn" onclick="document.getElementById('login').style.display='none'">Cerrar</button></div></div><div id="notice" class="notice"></div>
+<script>
+const courses=['Excel Básico','Excel Intermedio','Excel Avanzado','Power BI Básico','Power BI Intermedio','Power BI Avanzado','Power Query Básico','DAX Básico','SQL Básico','IA para oficina'];let step=0,xp=0;function toggleMenu(){document.getElementById('nav').classList.toggle('open')}function toast(t){const n=document.getElementById('notice');n.textContent=t;n.classList.add('show');setTimeout(()=>n.classList.remove('show'),2500)}function renderCourses(){const q=(document.getElementById('search')?.value||'').toLowerCase();document.getElementById('courseGrid').innerHTML=courses.filter(c=>c.toLowerCase().includes(q)).map((c,i)=>`<article class="card"><span class="pill">${i%3===0?'Gratis':'Premium'}</span><h3>${c}</h3><p>Ruta práctica con videos cortos, imágenes, ejercicios, archivos y evaluación.</p><div class="meta"><span>${i%3===0?'Básico':'Intermedio'}</span><span>${12+i} lecciones</span><span>${4+i}h</span></div><br><button class="btn primary" onclick="openLesson()">Entrar</button></article>`).join('')}function openLesson(){document.getElementById('leccion').classList.add('active');setStep(0);setTimeout(()=>document.getElementById('leccion').scrollIntoView({behavior:'smooth'}),100)}function closeLesson(){document.getElementById('leccion').classList.remove('active');location.hash='cursos'}function addXp(n){xp+=n;document.getElementById('xp').textContent=xp}function setStep(i){step=i;document.querySelectorAll('.step').forEach((e,k)=>e.classList.toggle('on',k===i));const title=['1. Bienvenida','1.2 Conociendo la interfaz de Excel','1.3 Haz clic en B5','1.4 Escribe una fórmula','1.5 Quiz final'][i];document.getElementById('lessonTitle').textContent=title;const teacher=['Bienvenido. Esta clase es corta y práctica.','Observa las partes de Excel: filas, columnas y celdas.','Toca la celda B5. Te diré si está bien.','Escribe la fórmula exactamente.','Responde el quiz para completar la lección.'][i];document.getElementById('teacherText').textContent=teacher;const s=document.getElementById('stage');if(i===0)s.innerHTML=`<h2>Bienvenido a Excel Básico</h2><p>Aprenderás como en una presentación interactiva: primero ves, luego practicas y finalmente respondes un reto.</p><button class="btn primary" onclick="setStep(1)">Reproducir explicación</button>`;if(i===1)s.innerHTML=`<div class="video-box"><div class="label l1">Barra de herramientas</div><div class="label l2">Columnas</div><div class="label l3">Filas</div><div class="excel">${excelGrid(false)}</div></div><br><button class="btn primary" onclick="setStep(2)">Ahora practicar</button>`;if(i===2)s.innerHTML=`<h3>Haz clic en la celda B5</h3><p id="msg">Ubica la columna B y la fila 5.</p><div class="practice"><div class="excel" style="position:relative;left:auto;right:auto;top:auto;bottom:auto;height:300px;grid-template-columns:38px repeat(5,1fr);">${excelGrid(true)}</div></div>`;if(i===3)s.innerHTML=`<h3>Escribe la fórmula</h3><p>Escribe: <b>=SUMA(A1:A10)</b></p><input id="formula" class="formula" placeholder="Escribe aquí"><br><br><button class="btn primary" onclick="checkFormula()">Validar</button><p id="fmsg"></p>`;if(i===4)s.innerHTML=`<h3>Mini quiz</h3><p>¿Con qué símbolo empieza una fórmula en Excel?</p><button class="btn" onclick="quiz(false)">+</button> <button class="btn primary" onclick="quiz(true)">=</button> <button class="btn" onclick="quiz(false)">#</button><p id="qmsg"></p>`}function excelGrid(click){let h='<div></div>';['A','B','C','D','E'].forEach(c=>h+=`<div class="head">${c}</div>`);for(let r=1;r<=5;r++){h+=`<div class="head">${r}</div>`;['A','B','C','D','E'].forEach(c=>{let cell=c+r;h+= click?`<button class="cell ${cell==='B5'?'target':''}" onclick="cell('${cell}')">${cell}</button>`:`<div class="cell ${cell==='B5'?'target':''}">${cell}</div>`})}return h}function cell(v){const m=document.getElementById('msg');if(v==='B5'){m.className='ok';m.textContent='✅ Correcto. Seleccionaste B5. +10 XP';addXp(10);setTimeout(()=>setStep(3),900)}else{m.className='bad';m.textContent='❌ Intenta de nuevo. Debes tocar B5.'}}function checkFormula(){const f=document.getElementById('formula').value.trim().toUpperCase();const m=document.getElementById('fmsg');if(f==='=SUMA(A1:A10)'){m.className='ok';m.textContent='✅ Correcto. +20 XP';addXp(20);setTimeout(()=>setStep(4),900)}else{m.className='bad';m.textContent='❌ Revisa que uses dos puntos: A1:A10'}}function quiz(ok){const m=document.getElementById('qmsg');if(ok){m.className='ok';m.textContent='🏆 Lección completada. +30 XP';addXp(30)}else{m.className='bad';m.textContent='❌ La respuesta correcta es ='}}function showLogin(){document.getElementById('login').style.display='grid'}renderCourses();
+</script>
+</body></html>
