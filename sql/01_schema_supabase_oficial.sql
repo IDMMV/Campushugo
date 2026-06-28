@@ -1,6 +1,0 @@
-create table if not exists public.profiles (id uuid primary key, email text unique, role text default 'alumno', created_at timestamptz default now());
-create table if not exists public.courses (id bigint generated always as identity primary key, title text not null, description text, access text default 'free', created_at timestamptz default now());
-create table if not exists public.lessons (id bigint generated always as identity primary key, course_id bigint references public.courses(id), title text not null, blocks jsonb default '[]', created_at timestamptz default now());
-create table if not exists public.resources (id bigint generated always as identity primary key, title text not null, category text, access text default 'free', price numeric default 0, file_url text, created_at timestamptz default now());
-create table if not exists public.sales (id bigint generated always as identity primary key, user_email text, resource_id bigint, amount numeric default 0, status text default 'pendiente', created_at timestamptz default now());
-create table if not exists public.subscriptions (id bigint generated always as identity primary key, user_email text, plan text, status text default 'activa', starts_at timestamptz default now(), ends_at timestamptz);
