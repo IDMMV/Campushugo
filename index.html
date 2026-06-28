@@ -1,132 +1,139 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>CampusHugo Pro | Aprende, Aplica y Automatiza</title>
-  <meta name="description" content="CampusHugo Pro: cursos prácticos, plantillas y herramientas para Excel, Power BI, SQL e IA aplicada al trabajo." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CampusHugo Pro Oficial</title>
+  <meta name="description" content="Cursos interactivos de Excel, Power BI, SQL e IA aplicada al trabajo." />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
-  <header class="app-header">
-    <a href="#inicio" class="brand" aria-label="CampusHugo Pro">
-      <span class="brand-icon">◇</span>
-      <span>Campus<span>Hugo</span></span>
-      <b>PRO</b>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="CampusHugo inicio">
+      <span class="brand-mark">CH</span>
+      <span><b>CampusHugo</b><small>Pro Oficial</small></span>
     </a>
-    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">☰</button>
-    <nav class="nav" id="nav">
+    <button class="menu-btn" id="menuBtn">☰</button>
+    <nav id="nav" class="nav">
       <a href="#cursos">Cursos</a>
-      <a href="#plantillas">Plantillas</a>
-      <a href="#herramientas">Herramientas</a>
+      <a href="#recursos">Recursos</a>
+      <a href="#leccion-demo">Lección demo</a>
       <a href="#planes">Planes</a>
-      <a href="#contacto">Contacto</a>
-      <button class="btn small" id="openLogin">Ingresar</button>
+      <button class="btn ghost" id="openLoginBtn">Ingresar</button>
     </nav>
   </header>
 
   <main>
-    <section class="hero" id="inicio">
+    <section id="inicio" class="hero">
       <div class="hero-copy">
-        <div class="badge">Fase 1 completa · Base lista para Supabase</div>
-        <h1>Aprende, aplica, automatiza y crece.</h1>
-        <p>Una plataforma práctica para Excel, Power BI, SQL e IA. Cursos, plantillas y herramientas enfocadas en resolver problemas reales del trabajo.</p>
-        <div class="hero-actions">
-          <a href="#cursos" class="btn">Ver cursos</a>
-          <a href="#planes" class="btn ghost">Ver planes</a>
-        </div>
-        <div class="trust">
-          <span>✅ Responsive móvil</span>
-          <span>✅ Login preparado</span>
-          <span>✅ Admin preparado</span>
+        <span class="pill">Excel • Power BI • SQL • IA</span>
+        <h1>Aprende practicando con cursos interactivos tipo presentación visual.</h1>
+        <p>CampusHugo Pro combina videos cortos, imágenes, ejercicios, quiz, descargas y un constructor para crear lecciones desde el panel administrador.</p>
+        <div class="actions">
+          <a href="#leccion-demo" class="btn primary">Ver lección interactiva</a>
+          <button class="btn secondary" id="adminShortcut">Panel admin</button>
         </div>
       </div>
       <div class="hero-card">
-        <div class="screen-top"><span></span><span></span><span></span></div>
-        <h3>Panel de aprendizaje</h3>
-        <div class="metric-grid">
-          <div><b>24</b><small>Cursos base</small></div>
-          <div><b>60</b><small>Lecciones</small></div>
-          <div><b>12</b><small>Plantillas</small></div>
-          <div><b>8</b><small>Herramientas</small></div>
-        </div>
-        <div class="chart-bars"><i></i><i></i><i></i><i></i><i></i></div>
-      </div>
-    </section>
-
-    <section class="section features">
-      <article><strong>🎓 Cursos prácticos</strong><p>Rutas claras desde cero hasta avanzado.</p></article>
-      <article><strong>📊 Plantillas reales</strong><p>Estructura lista para subir archivos profesionales.</p></article>
-      <article><strong>🤖 Herramientas IA</strong><p>Base preparada para conectar API después.</p></article>
-      <article><strong>🔐 Acceso premium</strong><p>Roles y permisos pensados para Supabase.</p></article>
-    </section>
-
-    <section class="section" id="cursos">
-      <div class="section-title"><h2>Rutas de aprendizaje</h2><p>Contenido inicial organizado para cargar lecciones reales.</p></div>
-      <div class="cards" id="courseGrid"></div>
-    </section>
-
-    <section class="section alt" id="plantillas">
-      <div class="section-title"><h2>Plantillas profesionales</h2><p>En esta fase no hay archivos falsos. Los botones quedan como solicitud por WhatsApp hasta subir recursos reales.</p></div>
-      <div class="cards" id="templateGrid"></div>
-    </section>
-
-    <section class="section" id="herramientas">
-      <div class="section-title"><h2>Herramientas online</h2><p>Calculadoras y asistentes base funcionando en el navegador.</p></div>
-      <div class="tool-layout">
-        <div class="tool-card">
-          <h3>Explicador de fórmula Excel</h3>
-          <textarea id="formulaInput" placeholder="Ejemplo: =BUSCARX(A2;Tabla[Codigo];Tabla[Nombre])"></textarea>
-          <button class="btn" id="explainBtn">Explicar</button>
-          <div class="result" id="formulaResult">Escribe una fórmula y presiona explicar.</div>
-        </div>
-        <div class="tool-card">
-          <h3>Generador de consulta SQL</h3>
-          <input id="tableName" placeholder="Nombre de tabla, ejemplo: ventas" />
-          <button class="btn" id="sqlBtn">Generar SELECT</button>
-          <pre class="result" id="sqlResult">SELECT * FROM tu_tabla LIMIT 100;</pre>
+        <div class="phone-preview">
+          <div class="phone-top"></div>
+          <h3>Lección 1</h3>
+          <p>Conociendo Excel</p>
+          <div class="progress"><span style="width:45%"></span></div>
+          <div class="mini-excel"><span>A</span><span>B</span><span>C</span><b>1</b><i></i><i></i><i></i><b>2</b><i></i><i class="active"></i><i></i></div>
+          <button class="btn primary full">Continuar</button>
         </div>
       </div>
     </section>
 
-    <section class="section alt" id="planes">
-      <div class="section-title"><h2>Planes</h2><p>Primero ventas manuales por WhatsApp. Luego conectamos pagos automáticos.</p></div>
-      <div class="pricing">
-        <article><h3>Gratis</h3><strong>S/ 0</strong><p>Cursos introductorios y recursos gratuitos.</p><button class="btn ghost">Empezar</button></article>
-        <article class="featured"><h3>Pro</h3><strong>S/ 19/mes</strong><p>Cursos premium, plantillas y certificados.</p><a class="btn" href="https://wa.me/51999999999?text=Hola%20quiero%20informaci%C3%B3n%20de%20CampusHugo%20Pro">Consultar</a></article>
-        <article><h3>Empresa</h3><strong>A medida</strong><p>Capacitación para equipos y reportes personalizados.</p><button class="btn ghost">Contactar</button></article>
+    <section id="cursos" class="section">
+      <div class="section-head"><span class="pill">Rutas</span><h2>Cursos interactivos</h2><p>Cargados desde Supabase cuando configures tus claves. Mientras tanto se muestran datos base.</p></div>
+      <div id="courseGrid" class="grid cards"></div>
+    </section>
+
+    <section id="recursos" class="section alt">
+      <div class="section-head"><span class="pill">Tienda</span><h2>Recursos y plantillas</h2><p>Archivos Excel, Power BI, SQL, ZIP, PDF, videos e imágenes gestionados desde el panel.</p></div>
+      <div id="resourceGrid" class="grid cards"></div>
+    </section>
+
+    <section id="leccion-demo" class="section">
+      <div class="section-head"><span class="pill">Demo</span><h2>Ejemplo de lección interactiva</h2><p>Esta es la base del motor tipo Prezi: bloques, práctica, quiz y puntos.</p></div>
+      <div class="lesson-shell">
+        <aside class="lesson-side">
+          <h3>Excel Básico</h3>
+          <div class="lesson-step active" data-step="0">1. Bienvenida</div>
+          <div class="lesson-step" data-step="1">2. Imagen guiada</div>
+          <div class="lesson-step" data-step="2">3. Práctica</div>
+          <div class="lesson-step" data-step="3">4. Fórmula</div>
+          <div class="lesson-step" data-step="4">5. Quiz</div>
+        </aside>
+        <article class="lesson-stage" id="lessonStage"></article>
       </div>
     </section>
 
-    <section class="section" id="adminPreview">
-      <div class="section-title"><h2>Panel administrador preparado</h2><p>Vista demo para revisar cómo se administrarán cursos, usuarios, ventas y recursos.</p></div>
-      <div class="admin-board">
-        <aside><button data-admin="dashboard" class="active">Dashboard</button><button data-admin="courses">Cursos</button><button data-admin="sales">Ventas</button><button data-admin="settings">Ajustes</button></aside>
-        <div id="adminPanel"></div>
+    <section id="planes" class="section alt">
+      <div class="section-head"><span class="pill">Monetización</span><h2>Planes</h2></div>
+      <div class="grid pricing">
+        <div class="price"><h3>Gratis</h3><b>S/ 0</b><p>Cursos iniciales y recursos libres.</p></div>
+        <div class="price featured"><h3>Pro mensual</h3><b>S/ 29</b><p>Cursos premium, descargas y certificados.</p></div>
+        <div class="price"><h3>Empresas</h3><b>A cotizar</b><p>Capacitación y dashboards personalizados.</p></div>
       </div>
     </section>
 
-    <section class="section contact" id="contacto">
-      <h2>Listo para la siguiente fase</h2>
-      <p>La base visual y funcional ya queda ordenada. Después conectamos Supabase real, login, archivos, pagos y certificados.</p>
-      <a class="btn" href="https://wa.me/51999999999?text=Hola%20CampusHugo">Escribir por WhatsApp</a>
+    <section id="admin" class="admin hidden">
+      <div class="admin-head">
+        <div><span class="pill">Administrador real</span><h2>Panel CampusHugo</h2><p>Solo visible para usuarios con rol admin en Supabase.</p></div>
+        <button class="btn ghost" id="logoutBtn">Cerrar sesión</button>
+      </div>
+      <div class="kpis">
+        <div><b id="kpiUsers">0</b><span>Usuarios</span></div>
+        <div><b id="kpiSubs">0</b><span>Suscripciones</span></div>
+        <div><b id="kpiSales">S/ 0</b><span>Ventas</span></div>
+        <div><b id="kpiDownloads">0</b><span>Descargas</span></div>
+      </div>
+      <div class="admin-grid">
+        <form id="resourceForm" class="panel">
+          <h3>Subir recurso</h3>
+          <input name="title" placeholder="Título del recurso" required />
+          <select name="category"><option>Excel</option><option>Power BI</option><option>SQL</option><option>IA</option><option>Plantilla</option></select>
+          <select name="access"><option value="free">Gratis</option><option value="premium">Premium</option></select>
+          <input name="price" type="number" min="0" step="0.01" placeholder="Precio" />
+          <textarea name="description" placeholder="Descripción"></textarea>
+          <input name="file" type="file" accept=".xlsx,.xls,.xlsm,.csv,.pbix,.pbit,.sql,.pdf,.docx,.pptx,.zip,.rar,.jpg,.jpeg,.png,.webp,.mp4,.webm" />
+          <button class="btn primary full">Guardar recurso</button>
+          <p class="hint">Se guarda en Supabase Storage bucket: <b>recursos</b>.</p>
+        </form>
+        <form id="lessonForm" class="panel">
+          <h3>Crear lección interactiva</h3>
+          <input name="lesson_title" placeholder="Título de la lección" required />
+          <select name="course"><option>Excel Básico</option><option>Power BI Básico</option><option>SQL Básico</option><option>IA para oficina</option></select>
+          <select name="block_type"><option value="video">Bloque video</option><option value="image">Bloque imagen</option><option value="practice">Bloque práctica</option><option value="quiz">Bloque quiz</option><option value="download">Bloque descarga</option></select>
+          <textarea name="content" placeholder="Contenido, instrucciones o URL"></textarea>
+          <button class="btn primary full">Guardar bloque</button>
+          <p class="hint">Luego agregaremos arrastrar y soltar bloques.</p>
+        </form>
+      </div>
+      <div class="panel">
+        <h3>Recursos cargados</h3>
+        <div id="adminResources" class="table-like"></div>
+      </div>
     </section>
   </main>
 
-  <div class="modal" id="loginModal" aria-hidden="true">
-    <div class="modal-card">
-      <button class="close" id="closeLogin">×</button>
-      <h2>Ingresar</h2>
-      <p>Demo visual. La autenticación real se conecta en Supabase.</p>
-      <input id="email" value="admin@campushugo.com" />
-      <input id="pass" value="admin123" type="password" />
-      <button class="btn" id="loginBtn">Entrar demo</button>
-      <small>Usuario demo: admin@campushugo.com · clave: admin123</small>
-    </div>
+  <div class="modal hidden" id="loginModal">
+    <form class="login-card" id="authForm">
+      <button type="button" class="x" id="closeLogin">×</button>
+      <h2>Ingresar / Registrarse</h2>
+      <input name="email" type="email" placeholder="Correo" required />
+      <input name="password" type="password" placeholder="Contraseña" required />
+      <div class="row"><button class="btn primary" name="mode" value="login">Ingresar</button><button class="btn secondary" name="mode" value="signup">Crear cuenta</button></div>
+      <p id="authMsg" class="hint"></p>
+    </form>
   </div>
 
-  <footer>© 2026 CampusHugo Pro · Plataforma en desarrollo profesional</footer>
+  <a class="whatsapp" href="https://wa.me/51999999999?text=Hola%20quiero%20informaci%C3%B3n%20de%20CampusHugo" target="_blank">WhatsApp</a>
   <script src="js/app.js"></script>
 </body>
 </html>
