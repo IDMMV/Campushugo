@@ -1,14 +1,27 @@
-# CampusHugo Pro v4 funcional
+# CampusHugo Pro - Aplicación real inicial
 
-Esta versión está en un solo `index.html` para evitar errores de cache o rutas.
+Esta versión sí tiene navegación funcional:
+- Inicio
+- Cursos
+- Recursos
+- Panel alumno
+- Panel administrador
+- Constructor básico de lecciones
+- Lección interactiva real de Excel
+- Progreso local con XP
+- SQL inicial para Supabase
 
-## Qué debe pasar
-- Debe verse el texto: `OFICIAL v4 • LECCIÓN INTERACTIVA FUNCIONANDO`.
-- Al tocar cualquier botón **Entrar**, se abre una lección interactiva.
-- Puedes tocar la celda B5, escribir `=SUMA(A1:A10)` y completar la lección.
+## Para subir a GitHub
+Sube todo el contenido de esta carpeta al repositorio, no la carpeta comprimida.
 
-## Cómo subir a GitHub
-1. Borra todo el contenido del repositorio.
-2. Sube solo `index.html` y `README.md`.
-3. Espera 2 a 5 minutos.
-4. Abre `https://idmmv.github.io/Campushugo/?v=4`.
+## Prueba
+1. Abre la web.
+2. Toca Cursos.
+3. Toca Entrar en Excel Básico.
+4. Reproduce explicación.
+5. Toca B5.
+6. Escribe =SUMA(A1:A10).
+
+## Admin demo
+Correo: admin@campushugo.com
+Clave: admin123
