@@ -1,36 +1,30 @@
-# CampusHugo Pro - Versión Pro Final Final
+# CampusHugo Pro - Versión definitiva base
 
-Esta versión incluye una web completa inicial para vender cursos, plantillas y herramientas de productividad.
+Esta versión incluye una web completa y ejecutable para revisar en navegador.
 
-## Archivos
+## Usuario demo
+- Correo: admin@campushugo.com
+- Contraseña: admin123
 
-- `index.html`: página principal completa.
-- `assets/styles.css`: diseño responsive.
-- `assets/app.js`: lógica de cursos, plantillas, herramientas, login demo y admin demo.
-- `assets/config.js`: configuración de Supabase.
-- `sql/supabase_campushugo.sql`: SQL completo para crear tablas, políticas y datos iniciales.
-- `docs/GUIA_INSTALACION.md`: pasos para publicar.
+## Contenido
+- 30 cursos organizados por categorías.
+- 20 plantillas descargables demo.
+- 6 herramientas online demo.
+- Panel administrador visual.
+- PWA instalable.
+- SQL Supabase base.
+- Páginas legales iniciales.
 
-## Cómo usar
+## Cómo probar
+1. Descomprime el ZIP.
+2. Abre `index.html` en el navegador.
+3. Revisa cursos, plantillas, herramientas y admin.
 
+## Cómo publicar
 1. Sube todos los archivos a GitHub.
-2. Publica el repositorio en Vercel.
-3. Crea un proyecto en Supabase.
-4. Ejecuta el SQL de `sql/supabase_campushugo.sql`.
-5. Copia tu Supabase URL y anon key en `assets/config.js`.
-6. Cambia el número de WhatsApp en `assets/config.js`.
+2. Conecta el repositorio a Vercel.
+3. En Supabase ejecuta `sql/01_schema_supabase_definitivo.sql`.
+4. Copia `assets/js/config.example.js` como `assets/js/config.js` y coloca tus credenciales.
 
-## Qué trae listo
-
-- Página moderna y responsive.
-- 20 cursos demo distribuidos por categorías.
-- 12 plantillas demo para vender o regalar.
-- 6 herramientas demo.
-- Panel administrador local de prueba.
-- Login demo.
-- Preparación para Supabase.
-- SQL con tablas, RLS, políticas y datos iniciales.
-
-## Próxima mejora recomendada
-
-Conectar el frontend a Supabase para que cursos, plantillas y usuarios se carguen desde la base de datos en vez de estar en arrays demo.
+## Importante
+Los pagos, IA real y certificados PDF reales quedan preparados para la siguiente integración con backend/API.
