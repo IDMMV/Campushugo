@@ -3,91 +3,135 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CampusHugo Pro | Aprende, Aplica, Automatiza</title>
-  <meta name="description" content="Cursos prácticos, plantillas profesionales y herramientas inteligentes para Excel, Power BI, SQL e IA aplicada al trabajo." />
+  <title>CampusHugo Pro | Cursos, Plantillas y Herramientas con IA</title>
+  <meta name="description" content="CampusHugo Pro: aprende Excel, Power BI, SQL, Power Query, DAX, IA y automatización con cursos, plantillas y herramientas prácticas." />
   <link rel="stylesheet" href="assets/styles.css" />
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="#inicio"><span class="logo">⌬</span><span>Campus<span>Hugo</span></span><b>PRO</b></a>
+    <a class="brand" href="#inicio" aria-label="CampusHugo Pro inicio">
+      <span class="logo">⬡</span>
+      <span>Campus<span>Hugo</span></span>
+      <b>PRO</b>
+    </a>
     <button class="menu-btn" id="menuBtn">☰</button>
-    <nav id="nav">
-      <a href="#inicio">Inicio</a><a href="#cursos">Cursos</a><a href="#plantillas">Plantillas</a><a href="#herramientas">Herramientas</a><a href="#precios">Precios</a><a href="#comunidad">Comunidad</a><a href="#admin">Admin</a>
+    <nav id="mainNav">
+      <a href="#cursos">Cursos</a>
+      <a href="#plantillas">Plantillas</a>
+      <a href="#herramientas">Herramientas</a>
+      <a href="#precios">Precios</a>
+      <a href="#admin">Admin</a>
+      <button class="ghost" id="themeBtn">🌙</button>
+      <button class="primary small" onclick="openLogin()">Ingresar</button>
     </nav>
-    <button class="btn small" onclick="openAuth()">Iniciar sesión</button>
   </header>
 
   <main>
     <section id="inicio" class="hero">
-      <div class="heroText">
-        <span class="pill">Excel • Power BI • SQL • IA</span>
+      <div class="hero-copy">
+        <p class="pill">Academia + plantillas + herramientas productivas</p>
         <h1>Aprende. Aplica. Automatiza. <span>Crece.</span></h1>
-        <p>Cursos prácticos, plantillas profesionales y herramientas inteligentes para que seas más productivo cada día.</p>
-        <div class="actions"><a class="btn" href="#cursos">Explorar cursos gratis</a><a class="btn ghost" href="#plantillas">Ver plantillas</a></div>
-        <div class="trust"><b id="studentCount">3,500+</b> estudiantes aprendiendo con recursos prácticos.</div>
+        <p>Una plataforma práctica para dominar Excel, Power BI, Power Query, DAX, SQL, Google Sheets, Apps Script, Power Automate e IA aplicada al trabajo.</p>
+        <div class="actions">
+          <a class="primary" href="#cursos">Explorar cursos gratis</a>
+          <a class="secondary" href="#plantillas">Ver plantillas</a>
+        </div>
+        <div class="trust">
+          <strong>+120</strong> cursos · <strong>+500</strong> plantillas · <strong>+50</strong> herramientas
+        </div>
       </div>
-      <div class="heroCard">
-        <div class="dashTop"><span></span><span></span><span></span></div>
-        <h3>Dashboard de Productividad</h3>
-        <div class="metrics"><div><b>120+</b><small>Cursos</small></div><div><b>500+</b><small>Plantillas</small></div><div><b>50+</b><small>Herramientas</small></div></div>
-        <div class="chart"><i style="height:45%"></i><i style="height:70%"></i><i style="height:55%"></i><i style="height:82%"></i><i style="height:95%"></i></div>
+      <div class="hero-card">
+        <div class="dashboard">
+          <div><small>Avance</small><b>86%</b></div>
+          <div><small>Plantillas</small><b>500+</b></div>
+          <div><small>Estudiantes</small><b>3,500+</b></div>
+        </div>
+        <div class="chart"><span style="height:40%"></span><span style="height:70%"></span><span style="height:55%"></span><span style="height:90%"></span><span style="height:75%"></span><span style="height:100%"></span></div>
+        <div class="floating-tools">
+          <span>Excel</span><span>Power BI</span><span>SQL</span><span>IA</span>
+        </div>
       </div>
     </section>
 
     <section class="features">
-      <article><span>🎓</span><h3>Cursos prácticos</h3><p>Aprende con ejemplos reales y archivos descargables.</p></article>
-      <article><span>📊</span><h3>Plantillas profesionales</h3><p>Ahorra tiempo con formatos listos para usar.</p></article>
-      <article><span>🤖</span><h3>Herramientas con IA</h3><p>Genera fórmulas, SQL, ideas y reportes.</p></article>
-      <article><span>👥</span><h3>Comunidad activa</h3><p>Pregunta, comparte y recibe ayuda.</p></article>
+      <article><b>🎓 Cursos prácticos</b><p>Rutas desde cero hasta avanzado con ejercicios y proyectos.</p></article>
+      <article><b>📂 Plantillas listas</b><p>Formatos, dashboards, control operativo, RRHH y finanzas.</p></article>
+      <article><b>🤖 Herramientas con IA</b><p>Genera fórmulas, SQL, macros y explicaciones rápidas.</p></article>
+      <article><b>🏆 Certificados</b><p>Exámenes, progreso, insignias y constancias descargables.</p></article>
     </section>
 
     <section id="cursos" class="section">
-      <div class="sectionTitle"><div><h2>Cursos gratuitos destacados</h2><p>Contenido inicial para atraer usuarios y generar confianza.</p></div><button class="btn small ghost" onclick="filterCards('curso','all')">Ver todos</button></div>
-      <div class="filters"><button onclick="filterCards('curso','all')">Todos</button><button onclick="filterCards('curso','Excel')">Excel</button><button onclick="filterCards('curso','Power BI')">Power BI</button><button onclick="filterCards('curso','SQL')">SQL</button><button onclick="filterCards('curso','IA')">IA</button></div>
-      <div class="grid" id="coursesGrid"></div>
+      <div class="section-head">
+        <div><p class="eyebrow">Academia</p><h2>Cursos incluidos</h2></div>
+        <input id="courseSearch" class="search" placeholder="Buscar curso: Excel, DAX, SQL..." />
+      </div>
+      <div class="tabs" id="courseTabs"></div>
+      <div class="grid cards" id="courseGrid"></div>
     </section>
 
-    <section id="plantillas" class="section alt">
-      <div class="sectionTitle"><div><h2>Plantillas para vender</h2><p>Productos digitales listos para vender por WhatsApp, Yape, Plin o PayPal.</p></div></div>
-      <div class="grid" id="templatesGrid"></div>
+    <section id="plantillas" class="section soft">
+      <div class="section-head">
+        <div><p class="eyebrow">Biblioteca</p><h2>Plantillas para vender o regalar</h2></div>
+        <select id="templateFilter" class="search"><option value="todas">Todas</option><option>Excel</option><option>Power BI</option><option>Operaciones</option><option>Finanzas</option></select>
+      </div>
+      <div class="grid cards" id="templateGrid"></div>
     </section>
 
     <section id="herramientas" class="section">
-      <div class="sectionTitle"><div><h2>Herramientas inteligentes</h2><p>Primera versión incluida sin costo de API. Luego podemos conectar IA real.</p></div></div>
-      <div class="tools">
-        <article class="tool"><h3>Generador de fórmulas Excel</h3><textarea id="formulaInput" placeholder="Ejemplo: buscar el último valor por fecha..."></textarea><button class="btn" onclick="generateFormula()">Generar ejemplo</button><pre id="formulaOutput"></pre></article>
-        <article class="tool"><h3>Constructor SQL básico</h3><textarea id="sqlInput" placeholder="Ejemplo: listar ventas por mes..."></textarea><button class="btn" onclick="generateSQL()">Generar SQL</button><pre id="sqlOutput"></pre></article>
-        <article class="tool"><h3>Calculadora de precio</h3><input id="cost" type="number" placeholder="Costo" /><input id="margin" type="number" placeholder="Margen %" /><button class="btn" onclick="calcPrice()">Calcular</button><pre id="priceOutput"></pre></article>
+      <p class="eyebrow">Productividad</p><h2>Herramientas rápidas</h2>
+      <div class="tools-layout">
+        <aside class="tool-list" id="toolList"></aside>
+        <div class="tool-panel">
+          <h3 id="toolTitle">Generador de fórmulas Excel</h3>
+          <textarea id="toolInput" placeholder="Describe lo que necesitas. Ejemplo: fórmula para traer el último registro por fecha según código..."></textarea>
+          <button class="primary" onclick="runTool()">Generar respuesta</button>
+          <pre id="toolOutput">Aquí aparecerá la respuesta.</pre>
+        </div>
       </div>
     </section>
 
-    <section id="precios" class="section alt">
-      <div class="sectionTitle"><div><h2>Planes de acceso</h2><p>Empieza manual por WhatsApp y luego automatizamos pagos.</p></div></div>
-      <div class="pricing">
-        <article><h3>Gratis</h3><b>US$0</b><p>Cursos básicos y recursos gratuitos.</p><a class="btn ghost" href="#cursos">Empezar</a></article>
-        <article class="popular"><span>Recomendado</span><h3>Premium</h3><b>US$9/mes</b><p>Cursos completos, plantillas premium y certificados.</p><a class="btn" id="waPlan" target="_blank">Comprar por WhatsApp</a></article>
-        <article><h3>Empresa</h3><b>A medida</b><p>Capacitación, dashboards y plantillas personalizadas.</p><a class="btn ghost" id="waCompany" target="_blank">Solicitar</a></article>
+    <section id="precios" class="section prices">
+      <p class="eyebrow">Monetización</p><h2>Planes sugeridos</h2>
+      <div class="price-grid">
+        <article><h3>Gratis</h3><b>US$0</b><p>Cursos básicos y recursos de muestra.</p><a class="secondary" href="#cursos">Empezar</a></article>
+        <article class="featured"><h3>Pro</h3><b>US$9/mes</b><p>Cursos avanzados, plantillas, certificados y herramientas.</p><a class="primary" href="https://wa.me/51999999999?text=Hola%20quiero%20CampusHugo%20Pro" target="_blank">Comprar por WhatsApp</a></article>
+        <article><h3>Empresas</h3><b>A medida</b><p>Capacitación, dashboards, automatizaciones y soporte.</p><a class="secondary" href="https://wa.me/51999999999?text=Hola%20quiero%20plan%20empresas" target="_blank">Cotizar</a></article>
       </div>
     </section>
 
-    <section id="comunidad" class="section community">
-      <div><h2>Comunidad CampusHugo</h2><p>Foro, retos semanales, ranking, soporte y publicaciones de alumnos. Esta zona queda preparada para conectar con Supabase.</p></div>
-      <form id="leadForm" class="leadForm"><input id="leadName" placeholder="Tu nombre" required><input id="leadEmail" type="email" placeholder="Tu correo" required><select id="leadInterest"><option>Excel</option><option>Power BI</option><option>SQL</option><option>IA</option></select><button class="btn">Quiero información</button><small id="leadMsg"></small></form>
-    </section>
-
-    <section id="admin" class="section admin">
-      <div class="sectionTitle"><div><h2>Panel administrador básico</h2><p>Modo inicial: administra contenido demo. Con Supabase, guarda en base real.</p></div></div>
-      <div class="adminGrid">
-        <aside><button onclick="adminTab('stats')">Resumen</button><button onclick="adminTab('courses')">Cursos</button><button onclick="adminTab('templates')">Plantillas</button><button onclick="adminTab('leads')">Leads</button></aside>
-        <div class="adminPanel" id="adminPanel"></div>
+    <section id="admin" class="section soft">
+      <p class="eyebrow">Panel</p><h2>Administrador demo</h2>
+      <div class="admin-grid">
+        <form id="adminForm" class="panel">
+          <h3>Agregar contenido</h3>
+          <input id="adminTitle" placeholder="Título" required />
+          <select id="adminType"><option>Curso</option><option>Plantilla</option><option>Herramienta</option></select>
+          <textarea id="adminDesc" placeholder="Descripción" required></textarea>
+          <button class="primary">Guardar demo</button>
+        </form>
+        <div class="panel"><h3>Contenido agregado</h3><div id="adminItems"></div></div>
+        <div class="panel"><h3>Estado Supabase</h3><p id="supabaseStatus">Configura assets/config.js con tu URL y anon key.</p><button class="secondary" onclick="testSupabase()">Probar conexión</button></div>
       </div>
     </section>
   </main>
 
-  <div class="modal" id="authModal"><div class="modalBox"><button class="close" onclick="closeAuth()">×</button><h2>Acceso CampusHugo</h2><input id="authEmail" type="email" placeholder="Correo"><input id="authPass" type="password" placeholder="Contraseña"><button class="btn" onclick="loginDemo()">Ingresar demo</button><small id="authMsg">Usuario demo: cualquier correo y contraseña.</small></div></div>
+  <div class="modal" id="loginModal">
+    <div class="modal-card">
+      <button class="close" onclick="closeLogin()">×</button>
+      <h2>Ingresar a CampusHugo Pro</h2>
+      <input id="email" type="email" placeholder="Correo" />
+      <input id="password" type="password" placeholder="Contraseña" />
+      <button class="primary" onclick="loginDemo()">Ingresar demo</button>
+      <p id="loginMsg"></p>
+    </div>
+  </div>
 
-  <footer><b>CampusHugo Pro</b><p>Plantillas, cursos y herramientas para trabajar mejor.</p><a id="waFooter" target="_blank">WhatsApp</a></footer>
+  <footer>
+    <b>CampusHugo Pro</b> · Cursos, plantillas y herramientas para trabajar mejor.
+  </footer>
+
+  <script src="assets/config.js"></script>
   <script src="assets/app.js"></script>
 </body>
 </html>
