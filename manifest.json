@@ -1,9 +1,0 @@
-{
-  "name": "CampusHugo Pro",
-  "short_name": "CampusHugo",
-  "start_url": "./index.html",
-  "display": "standalone",
-  "background_color": "#f4f7fb",
-  "theme_color": "#07152c",
-  "icons": []
-}
