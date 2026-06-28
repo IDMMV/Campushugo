@@ -1,5 +1,0 @@
-CampusHugo Pro
-Recurso: Power BI Starter
-Tipo: Excel/Power BI/PDF
-
-Este archivo es una muestra. Reemplázalo por tu Excel, PBIX, PDF o ZIP real.
