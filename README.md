@@ -46,3 +46,9 @@ por tu URL y anon key de Supabase.
 
 ## Nota importante
 Esta es la base oficial unificada. El constructor visual ya existe como módulo inicial. La siguiente mejora será guardar múltiples bloques por lección con orden, edición, eliminación y vista previa completa.
+
+
+## IMPORTANTE
+Esta es la VERSION OFICIAL v2. Si no ves la seccion 'Ejemplo de leccion interactiva', GitHub esta mostrando archivos antiguos. Borra todo el repositorio y sube el contenido de este ZIP, no la carpeta completa.
+
+El boton Entrar al curso baja a la leccion interactiva.
