@@ -1,47 +1,102 @@
-/* CAMPUSHUGO PRO - CONFIGURA AQUÍ SUPABASE */
-const SUPABASE_URL = 'PEGA_AQUI_TU_SUPABASE_URL';
-const SUPABASE_ANON_KEY = 'PEGA_AQUI_TU_SUPABASE_ANON_KEY';
-const WHATSAPP = '51999999999'; // cambia por tu número con código de país
-const supabaseClient = (SUPABASE_URL.startsWith('http')) ? supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
+const cfg = window.CAMPUSHUGO_CONFIG || {};
+let supabaseClient = null;
+if (cfg.SUPABASE_URL && !cfg.SUPABASE_URL.includes('TU-PROYECTO') && cfg.SUPABASE_ANON_KEY && !cfg.SUPABASE_ANON_KEY.includes('TU_ANON')) {
+  supabaseClient = window.supabase.createClient(cfg.SUPABASE_URL, cfg.SUPABASE_ANON_KEY);
+}
 
+const categories = ['Todos','Excel','Power BI','Power Query','DAX','SQL','IA','Automatización','Google Sheets','Python'];
 const courses = [
- {cat:'Excel', icon:'🟩', title:'Excel Básico para Principiantes', desc:'Funciones, tablas y gráficos desde cero.', level:'Básico', price:'Gratis'},
- {cat:'Power BI', icon:'📊', title:'Power BI Básico', desc:'Crea tus primeros dashboards profesionales.', level:'Básico', price:'Gratis'},
- {cat:'Excel', icon:'🔎', title:'BUSCARV, XLOOKUP e ÍNDICE', desc:'Domina búsquedas y cruces de información.', level:'Intermedio', price:'Gratis'},
- {cat:'SQL', icon:'🗄️', title:'SQL Básico', desc:'Consulta y analiza datos con SELECT, WHERE y JOIN.', level:'Básico', price:'Gratis'},
- {cat:'IA', icon:'🤖', title:'IA para Oficina', desc:'Usa IA para reportes, correos y automatización.', level:'Básico', price:'Gratis'},
- {cat:'Power BI', icon:'⚡', title:'Power Query desde Cero', desc:'Limpia y transforma datos sin sufrir.', level:'Intermedio', price:'Gratis'},
- {cat:'Excel', icon:'📈', title:'Dashboards en Excel', desc:'Indicadores, KPIs y reportes ejecutivos.', level:'Intermedio', price:'Premium'},
- {cat:'SQL', icon:'🔗', title:'JOINs y reportes SQL', desc:'Une tablas y crea reportes útiles.', level:'Intermedio', price:'Premium'}
+  ['Excel Básico desde Cero','Excel','Gratis','Aprende celdas, formatos, fórmulas simples y ordenamiento.','📗','2h 15m'],
+  ['Funciones Esenciales de Excel','Excel','Gratis','SUMA, SI, BUSCARV, BUSCARX, FILTRAR y fórmulas modernas.','🧮','3h 20m'],
+  ['Excel Intermedio para Oficina','Excel','Pro','Tablas, validaciones, reportes y limpieza de datos.','📊','4h 10m'],
+  ['Excel Avanzado con Dashboards','Excel','Pro','Tableros profesionales, KPIs, segmentadores y automatización.','📈','6h 30m'],
+  ['Power BI Básico','Power BI','Gratis','Carga datos y crea tus primeros gráficos y dashboards.','🟨','2h 45m'],
+  ['Power BI para Supervisores','Power BI','Pro','Indicadores de avance, productividad, cumplimiento y alertas.','📉','5h 40m'],
+  ['Power Query desde Cero','Power Query','Gratis','Transforma datos sin fórmulas complicadas.','🔄','2h 30m'],
+  ['Power Query Avanzado','Power Query','Pro','Unir archivos, parametrizar consultas y automatizar reportes.','⚙️','5h 10m'],
+  ['DAX Básico','DAX','Gratis','Medidas, columnas calculadas, CALCULATE y filtros.','🧠','2h 50m'],
+  ['DAX Avanzado para KPIs','DAX','Pro','Time intelligence, acumulados, ranking y métricas complejas.','🏆','6h 00m'],
+  ['SQL Básico','SQL','Gratis','SELECT, WHERE, JOIN, GROUP BY y consultas prácticas.','🗄️','3h 10m'],
+  ['SQL Server para Reportes','SQL','Pro','Vistas, procedimientos, consultas optimizadas y reporting.','💾','5h 30m'],
+  ['IA para Oficina','IA','Gratis','Usa IA para redactar, analizar datos y crear fórmulas.','🤖','2h 00m'],
+  ['IA para Excel y Power BI','IA','Pro','Prompts, análisis de datos, dashboards y automatización asistida.','✨','4h 50m'],
+  ['Google Sheets Profesional','Google Sheets','Gratis','Funciones, validaciones, filtros y colaboración online.','🟩','2h 25m'],
+  ['Apps Script para Automatizar','Automatización','Pro','Automatiza correos, formularios, hojas y reportes.','🧩','5h 20m'],
+  ['Power Automate Básico','Automatización','Gratis','Crea flujos para ahorrar tiempo en procesos repetitivos.','🔌','2h 40m'],
+  ['Python para Analizar Datos','Python','Pro','Pandas, archivos Excel, limpieza y gráficos básicos.','🐍','6h 15m'],
+  ['Macros VBA desde Cero','Automatización','Pro','Botones, formularios, eventos y automatización en Excel.','⌨️','5h 45m'],
+  ['Dashboard Ejecutivo Integral','Power BI','Pro','Proyecto completo desde datos crudos hasta tablero final.','🚀','8h 00m']
 ];
 const templates = [
- {cat:'Excel', icon:'📦', title:'Control de Inventario Avanzado', desc:'Entradas, salidas, stock mínimo y dashboard.', price:'US$7'},
- {cat:'Power BI', icon:'📊', title:'Dashboard de Ventas Power BI', desc:'Ventas, metas, clientes y productos.', price:'US$10'},
- {cat:'Excel', icon:'💰', title:'Control de Gastos Personales', desc:'Presupuesto mensual y gráficos automáticos.', price:'US$5'},
- {cat:'Operaciones', icon:'🛠️', title:'Control de Trabajos Operativos', desc:'Pendiente, ejecutado, observado y avance.', price:'US$9'},
- {cat:'Excel', icon:'🧾', title:'Caja y Vuelto para Negocio', desc:'Ventas, IGV, efectivo y vuelto.', price:'US$6'},
- {cat:'Power BI', icon:'⚙️', title:'Dashboard de Mantenimiento', desc:'Incidencias, tiempos y productividad.', price:'US$12'},
- {cat:'RRHH', icon:'👥', title:'Asistencia y Horas Extras', desc:'Control mensual del personal.', price:'US$6'},
- {cat:'SQL', icon:'🗄️', title:'Pack Consultas SQL', desc:'Consultas listas para reportes frecuentes.', price:'US$5'}
+  ['Control de Trabajos Operativos','Excel','US$7','Estados, avance, observaciones y dashboard.','📋'],
+  ['Dashboard de Ventas Power BI','Power BI','US$12','Ventas, margen, clientes, productos y tendencias.','🟨'],
+  ['Control de Gastos Personales','Finanzas','Gratis','Presupuesto mensual, categorías y alertas.','💵'],
+  ['Inventario Avanzado','Excel','US$9','Stock, entradas, salidas, mínimos y reporte.','📦'],
+  ['Cronograma de Mantenimiento','Operaciones','US$8','Programación, responsables, vencimientos y avance.','🛠️'],
+  ['Reporte Diario de Supervisión','Operaciones','US$6','Formato listo para seguimiento diario.','🦺'],
+  ['Matriz de Riesgos','Excel','US$5','Probabilidad, impacto, criticidad y acciones.','⚠️'],
+  ['Dashboard RRHH','Power BI','US$10','Personal, asistencia, rotación y productividad.','👥'],
+  ['Flujo de Caja Simple','Finanzas','US$6','Ingresos, egresos, saldo y proyección.','🏦'],
+  ['Base de Incidencias','Operaciones','US$7','Registro, prioridad, responsable y cierre.','🚨'],
+  ['KPI de Producción','Power BI','US$12','Cumplimiento, tiempos, fallas y eficiencia.','🏭'],
+  ['Registro de Capacitaciones','Excel','US$5','Asistencia, notas, certificados y vencimientos.','🎓']
 ];
-let leads = JSON.parse(localStorage.getItem('ch_leads')||'[]');
+const tools = [
+  ['Generador de fórmulas Excel','Describe tu caso y recibe una fórmula sugerida con explicación.'],
+  ['Explicador de fórmulas','Pega una fórmula y obtén explicación paso a paso.'],
+  ['Constructor SQL','Convierte una necesidad en una consulta SELECT base.'],
+  ['Generador de DAX','Crea medidas DAX para Power BI.'],
+  ['Generador de macros VBA','Crea una macro base para tareas repetitivas.'],
+  ['Prompt para IA','Convierte una idea en un buen prompt profesional.']
+];
+let activeCategory = 'Todos';
+let activeTool = tools[0][0];
 
-document.getElementById('menuBtn').onclick=()=>document.getElementById('nav').classList.toggle('open');
-document.querySelectorAll('nav a').forEach(a=>a.onclick=()=>document.getElementById('nav').classList.remove('open'));
-document.getElementById('waPlan').href=wa('Hola, quiero comprar el plan Premium de CampusHugo Pro.');
-document.getElementById('waCompany').href=wa('Hola, quiero información del plan Empresa de CampusHugo Pro.');
-document.getElementById('waFooter').href=wa('Hola, quiero información de CampusHugo Pro.');
-
-function wa(msg){return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`}
-function card(item,type){return `<article class="card" data-type="${type}" data-cat="${item.cat}"><div class="thumb"><span class="tag">${item.cat}</span>${item.icon}</div><div class="cardBody"><h3>${item.title}</h3><p>${item.desc}</p><div class="meta"><span>${item.level||'Producto digital'}</span><span class="price">${item.price}</span></div><a class="btn small" target="_blank" href="${wa('Hola, quiero '+(type==='curso'?'el curso ':'la plantilla ')+item.title)}">${item.price==='Gratis'?'Solicitar':'Comprar'}</a></div></article>`}
-function render(){document.getElementById('coursesGrid').innerHTML=courses.map(x=>card(x,'curso')).join('');document.getElementById('templatesGrid').innerHTML=templates.map(x=>card(x,'plantilla')).join('');adminTab('stats')}
-function filterCards(type,cat){document.querySelectorAll(`[data-type="${type}"]`).forEach(el=>el.classList.toggle('hidden',cat!=='all'&&el.dataset.cat!==cat))}
-function generateFormula(){const v=document.getElementById('formulaInput').value.trim();document.getElementById('formulaOutput').textContent=v?`Ejemplo sugerido:\n=FILTRAR(A2:E100;A2:A100="criterio")\n\nPara último registro por fecha:\n=INDICE(ORDENARPOR(FILTRAR(A2:E100;A2:A100=G2);E2:E100;-1);1;)\n\nNota: ajusta rangos y columnas según tu archivo.`:'Escribe primero lo que necesitas resolver.'}
-function generateSQL(){const v=document.getElementById('sqlInput').value.trim();document.getElementById('sqlOutput').textContent=v?`SELECT\n  DATE_TRUNC('month', fecha) AS mes,\n  SUM(monto) AS total_ventas,\n  COUNT(*) AS cantidad\nFROM ventas\nWHERE fecha >= CURRENT_DATE - INTERVAL '12 months'\nGROUP BY mes\nORDER BY mes;`:'Describe el reporte que deseas crear.'}
-function calcPrice(){const c=Number(document.getElementById('cost').value),m=Number(document.getElementById('margin').value);document.getElementById('priceOutput').textContent=(c&&m)?`Precio sugerido: US$ ${(c*(1+m/100)).toFixed(2)}\nGanancia estimada: US$ ${(c*m/100).toFixed(2)}`:'Ingresa costo y margen.'}
-function openAuth(){document.getElementById('authModal').style.display='flex'}function closeAuth(){document.getElementById('authModal').style.display='none'}
-function loginDemo(){document.getElementById('authMsg').textContent='Sesión demo iniciada. Luego conectaremos autenticación real con Supabase.';setTimeout(closeAuth,900)}
-
-document.getElementById('leadForm').addEventListener('submit',async(e)=>{e.preventDefault();const lead={nombre:leadName.value,email:leadEmail.value,interes:leadInterest.value,fecha:new Date().toISOString()};leads.unshift(lead);localStorage.setItem('ch_leads',JSON.stringify(leads));leadMsg.textContent='Registrado correctamente.';e.target.reset(); if(supabaseClient){await supabaseClient.from('leads').insert(lead)} });
-function adminTab(tab){const p=document.getElementById('adminPanel');if(tab==='stats')p.innerHTML=`<h3>Resumen</h3><div class="metrics"><div><b>${courses.length}</b><small>Cursos</small></div><div><b>${templates.length}</b><small>Plantillas</small></div><div><b>${leads.length}</b><small>Leads locales</small></div></div><p>Para activar datos reales pega tu URL y anon key de Supabase en assets/app.js.</p>`;if(tab==='courses')p.innerHTML=`<h3>Cursos</h3><table class="table"><tr><th>Título</th><th>Categoría</th><th>Precio</th></tr>${courses.map(x=>`<tr><td>${x.title}</td><td>${x.cat}</td><td>${x.price}</td></tr>`).join('')}</table>`;if(tab==='templates')p.innerHTML=`<h3>Plantillas</h3><table class="table"><tr><th>Título</th><th>Categoría</th><th>Precio</th></tr>${templates.map(x=>`<tr><td>${x.title}</td><td>${x.cat}</td><td>${x.price}</td></tr>`).join('')}</table>`;if(tab==='leads')p.innerHTML=`<h3>Leads</h3><table class="table"><tr><th>Nombre</th><th>Email</th><th>Interés</th></tr>${leads.map(x=>`<tr><td>${x.nombre}</td><td>${x.email}</td><td>${x.interes}</td></tr>`).join('')||'<tr><td colspan="3">Aún no hay leads.</td></tr>'}</table>`}
-render();
+function renderTabs(){
+  courseTabs.innerHTML = categories.map(c=>`<button class="tab ${c===activeCategory?'active':''}" onclick="setCategory('${c}')">${c}</button>`).join('');
+}
+function setCategory(c){ activeCategory=c; renderTabs(); renderCourses(); }
+function renderCourses(){
+  const q = courseSearch.value.toLowerCase();
+  const list = courses.filter(x=>(activeCategory==='Todos'||x[1]===activeCategory) && x.join(' ').toLowerCase().includes(q));
+  courseGrid.innerHTML = list.map(x=>`<article class="card"><div class="thumb">${x[4]}</div><span class="badge">${x[2]}</span><h3>${x[0]}</h3><p>${x[3]}</p><div class="meta"><span>${x[1]}</span><span>⭐ 4.8 · ${x[5]}</span></div></article>`).join('');
+}
+function renderTemplates(){
+  const f = templateFilter.value;
+  const list = templates.filter(x=>f==='todas'||x[1]===f);
+  templateGrid.innerHTML = list.map(x=>`<article class="card"><div class="thumb">${x[4]}</div><span class="badge">${x[1]}</span><h3>${x[0]}</h3><p>${x[3]}</p><div class="meta"><span>${x[2]}</span><span>⬇️ Descargar</span></div></article>`).join('');
+}
+function renderTools(){
+  toolList.innerHTML = tools.map(t=>`<button class="tool-item ${t[0]===activeTool?'active':''}" onclick="selectTool('${t[0]}')">${t[0]}<br><small>${t[1]}</small></button>`).join('');
+}
+function selectTool(t){ activeTool=t; toolTitle.textContent=t; renderTools(); }
+function runTool(){
+  const text = toolInput.value.trim() || 'Necesito resolver un problema de oficina.';
+  const samples = {
+    'Generador de fórmulas Excel': `Sugerencia:\n=FILTRAR(Tabla1,Tabla1[Codigo]=A2)\n\nExplicación: filtra los registros donde el código coincide con A2. Ajusta nombres de tabla y columnas según tu archivo.`,
+    'Explicador de fórmulas': `La fórmula se debe leer por partes: primero identifica el rango, luego aplica el criterio y finalmente devuelve el resultado. Para revisarla, valida separadores ; o , según tu configuración regional.`,
+    'Constructor SQL': `SELECT codigo, fecha, estado, responsable\nFROM reportes\nWHERE estado = 'Pendiente'\nORDER BY fecha DESC;`,
+    'Generador de DAX': `Total Ejecutado = CALCULATE(COUNTROWS(Reportes), Reportes[Estado] = "Ejecutado")`,
+    'Generador de macros VBA': `Sub LimpiarFiltros()\n  If ActiveSheet.AutoFilterMode Then ActiveSheet.ShowAllData\nEnd Sub`,
+    'Prompt para IA': `Actúa como experto en Excel. Necesito que me ayudes con este caso: ${text}. Dame la fórmula, explicación y un ejemplo.`
+  };
+  toolOutput.textContent = samples[activeTool] + `\n\nTu solicitud: ${text}`;
+}
+function openLogin(){ loginModal.classList.add('show'); }
+function closeLogin(){ loginModal.classList.remove('show'); }
+function loginDemo(){ loginMsg.textContent = 'Ingreso demo correcto. Luego conectaremos autenticación real con Supabase.'; }
+function testSupabase(){ supabaseStatus.textContent = supabaseClient ? 'Supabase configurado correctamente en el frontend.' : 'Aún falta colocar tu URL y anon key en assets/config.js'; }
+function saveAdmin(e){
+  e.preventDefault();
+  const item = {title:adminTitle.value,type:adminType.value,desc:adminDesc.value,created:new Date().toLocaleString()};
+  const items = JSON.parse(localStorage.getItem('campushugo_admin')||'[]');
+  items.unshift(item); localStorage.setItem('campushugo_admin',JSON.stringify(items)); e.target.reset(); renderAdmin();
+}
+function renderAdmin(){
+  const items = JSON.parse(localStorage.getItem('campushugo_admin')||'[]');
+  adminItems.innerHTML = items.length ? items.map(i=>`<p><b>${i.type}:</b> ${i.title}<br><small>${i.desc}</small></p>`).join('') : '<p>No hay contenido demo agregado.</p>';
+}
+menuBtn.onclick=()=>mainNav.classList.toggle('open');
+themeBtn.onclick=()=>document.body.classList.toggle('dark');
+courseSearch.oninput=renderCourses; templateFilter.onchange=renderTemplates; adminForm.onsubmit=saveAdmin;
+renderTabs(); renderCourses(); renderTemplates(); renderTools(); renderAdmin();
