@@ -1,1 +1,132 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>CampusHugo Pro | Aprende, practica y vende productividad</title><meta name="description" content="CampusHugo Pro: cursos, plantillas y herramientas de Excel, Power BI, SQL e IA para oficina."><link rel="manifest" href="manifest.json"><link rel="stylesheet" href="assets/css/styles.css"></head><body><header class="top"><div class="brand"><div class="logo">CH</div><div><strong>CampusHugo Pro</strong><span>Excel • Power BI • SQL • IA</span></div></div><button class="hamb" id="hamb">☰</button><nav id="nav"><a href="#inicio">Inicio</a><a href="#cursos">Cursos</a><a href="#plantillas">Plantillas</a><a href="#herramientas">Herramientas</a><a href="#planes">Planes</a><a href="#admin">Admin</a><a class="btn small" href="#login">Ingresar</a></nav></header><main><section id="inicio" class="hero"><div><p class="pill">Versión definitiva base lista para publicar</p><h1>Aprende y resuelve problemas reales con Excel, Power BI, SQL e IA.</h1><p class="lead">Plataforma preparada para cursos gratuitos, membresía premium, plantillas descargables, herramientas online, certificados y conexión con Supabase.</p><div class="actions"><a href="#cursos" class="btn">Ver cursos</a><a href="https://wa.me/51999999999?text=Hola%20quiero%20información%20de%20CampusHugo%20Pro" class="btn ghost">Comprar por WhatsApp</a></div></div><div class="card heroCard"><h3>Panel rápido</h3><div class="metrics"><div><b id="mCourses">0</b><span>Cursos</span></div><div><b id="mTemplates">0</b><span>Plantillas</span></div><div><b>6</b><span>Herramientas</span></div></div><div class="progress"><span style="width:72%"></span></div><p>Ruta sugerida: Excel → Power BI → SQL → IA.</p></div></section><section class="strip"><div><b>Gratis</b><span>Cursos básicos y recursos iniciales</span></div><div><b>Premium</b><span>Plantillas, certificados y rutas avanzadas</span></div><div><b>Empresas</b><span>Capacitación y dashboards personalizados</span></div></section><section id="cursos" class="section"><div class="sectionHead"><h2>Rutas y cursos</h2><input id="courseSearch" placeholder="Buscar curso..."></div><div class="filters" id="filters"></div><div class="grid" id="coursesGrid"></div></section><section id="plantillas" class="section alt"><div class="sectionHead"><h2>Biblioteca de plantillas</h2><p>Los archivos demo están listos para reemplazar por tus archivos reales.</p></div><div class="grid cardsSmall" id="templatesGrid"></div></section><section id="herramientas" class="section"><div class="sectionHead"><h2>Herramientas online</h2><p>Funcionan en modo demo local. Luego se conectan con IA/API.</p></div><div class="tools"><div class="toolPanel"><select id="toolSelect"></select><textarea id="toolInput" placeholder="Escribe aquí tu consulta, fórmula o necesidad..."></textarea><button class="btn" id="runTool">Ejecutar herramienta</button><pre id="toolOutput">Resultado aparecerá aquí.</pre></div><div class="grid cardsSmall" id="toolsGrid"></div></div></section><section id="planes" class="section alt"><h2>Planes de venta</h2><div class="pricing"><div class="price"><h3>Gratis</h3><b>US$0</b><p>Cursos básicos y recursos de muestra.</p><button class="btn ghost">Empezar</button></div><div class="price featured"><h3>Pro</h3><b>US$9/mes</b><p>Cursos avanzados, plantillas y certificados.</p><button class="btn">Solicitar acceso</button></div><div class="price"><h3>Empresa</h3><b>A medida</b><p>Capacitaciones, dashboards y soporte.</p><button class="btn ghost">Cotizar</button></div></div></section><section id="login" class="section"><h2>Acceso demo</h2><div class="loginBox"><input id="email" value="admin@campushugo.com"><input id="pass" type="password" value="admin123"><button class="btn" id="loginBtn">Ingresar</button><p id="loginMsg">Usuario demo: admin@campushugo.com / admin123</p></div></section><section id="admin" class="section alt"><h2>Panel administrador demo</h2><div class="admin"><aside><button data-tab="dashboard" class="tab active">Dashboard</button><button data-tab="courses" class="tab">Cursos</button><button data-tab="sales" class="tab">Ventas</button><button data-tab="users" class="tab">Usuarios</button><button data-tab="settings" class="tab">Configuración</button></aside><div id="adminContent" class="adminContent"></div></div></section></main><footer><div><b>CampusHugo Pro</b><p>Producto digital para cursos, plantillas y herramientas de productividad.</p></div><div><a href="pages/terminos.html">Términos</a><a href="pages/privacidad.html">Privacidad</a><a href="docs/GUIA_PUBLICACION.md">Guía</a></div></footer><script src="assets/js/data.js"></script><script src="assets/js/app.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>CampusHugo Pro | Aprende, Aplica y Automatiza</title>
+  <meta name="description" content="CampusHugo Pro: cursos prácticos, plantillas y herramientas para Excel, Power BI, SQL e IA aplicada al trabajo." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <a href="#inicio" class="brand" aria-label="CampusHugo Pro">
+      <span class="brand-icon">◇</span>
+      <span>Campus<span>Hugo</span></span>
+      <b>PRO</b>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">☰</button>
+    <nav class="nav" id="nav">
+      <a href="#cursos">Cursos</a>
+      <a href="#plantillas">Plantillas</a>
+      <a href="#herramientas">Herramientas</a>
+      <a href="#planes">Planes</a>
+      <a href="#contacto">Contacto</a>
+      <button class="btn small" id="openLogin">Ingresar</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <div class="badge">Fase 1 completa · Base lista para Supabase</div>
+        <h1>Aprende, aplica, automatiza y crece.</h1>
+        <p>Una plataforma práctica para Excel, Power BI, SQL e IA. Cursos, plantillas y herramientas enfocadas en resolver problemas reales del trabajo.</p>
+        <div class="hero-actions">
+          <a href="#cursos" class="btn">Ver cursos</a>
+          <a href="#planes" class="btn ghost">Ver planes</a>
+        </div>
+        <div class="trust">
+          <span>✅ Responsive móvil</span>
+          <span>✅ Login preparado</span>
+          <span>✅ Admin preparado</span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="screen-top"><span></span><span></span><span></span></div>
+        <h3>Panel de aprendizaje</h3>
+        <div class="metric-grid">
+          <div><b>24</b><small>Cursos base</small></div>
+          <div><b>60</b><small>Lecciones</small></div>
+          <div><b>12</b><small>Plantillas</small></div>
+          <div><b>8</b><small>Herramientas</small></div>
+        </div>
+        <div class="chart-bars"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </section>
+
+    <section class="section features">
+      <article><strong>🎓 Cursos prácticos</strong><p>Rutas claras desde cero hasta avanzado.</p></article>
+      <article><strong>📊 Plantillas reales</strong><p>Estructura lista para subir archivos profesionales.</p></article>
+      <article><strong>🤖 Herramientas IA</strong><p>Base preparada para conectar API después.</p></article>
+      <article><strong>🔐 Acceso premium</strong><p>Roles y permisos pensados para Supabase.</p></article>
+    </section>
+
+    <section class="section" id="cursos">
+      <div class="section-title"><h2>Rutas de aprendizaje</h2><p>Contenido inicial organizado para cargar lecciones reales.</p></div>
+      <div class="cards" id="courseGrid"></div>
+    </section>
+
+    <section class="section alt" id="plantillas">
+      <div class="section-title"><h2>Plantillas profesionales</h2><p>En esta fase no hay archivos falsos. Los botones quedan como solicitud por WhatsApp hasta subir recursos reales.</p></div>
+      <div class="cards" id="templateGrid"></div>
+    </section>
+
+    <section class="section" id="herramientas">
+      <div class="section-title"><h2>Herramientas online</h2><p>Calculadoras y asistentes base funcionando en el navegador.</p></div>
+      <div class="tool-layout">
+        <div class="tool-card">
+          <h3>Explicador de fórmula Excel</h3>
+          <textarea id="formulaInput" placeholder="Ejemplo: =BUSCARX(A2;Tabla[Codigo];Tabla[Nombre])"></textarea>
+          <button class="btn" id="explainBtn">Explicar</button>
+          <div class="result" id="formulaResult">Escribe una fórmula y presiona explicar.</div>
+        </div>
+        <div class="tool-card">
+          <h3>Generador de consulta SQL</h3>
+          <input id="tableName" placeholder="Nombre de tabla, ejemplo: ventas" />
+          <button class="btn" id="sqlBtn">Generar SELECT</button>
+          <pre class="result" id="sqlResult">SELECT * FROM tu_tabla LIMIT 100;</pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="planes">
+      <div class="section-title"><h2>Planes</h2><p>Primero ventas manuales por WhatsApp. Luego conectamos pagos automáticos.</p></div>
+      <div class="pricing">
+        <article><h3>Gratis</h3><strong>S/ 0</strong><p>Cursos introductorios y recursos gratuitos.</p><button class="btn ghost">Empezar</button></article>
+        <article class="featured"><h3>Pro</h3><strong>S/ 19/mes</strong><p>Cursos premium, plantillas y certificados.</p><a class="btn" href="https://wa.me/51999999999?text=Hola%20quiero%20informaci%C3%B3n%20de%20CampusHugo%20Pro">Consultar</a></article>
+        <article><h3>Empresa</h3><strong>A medida</strong><p>Capacitación para equipos y reportes personalizados.</p><button class="btn ghost">Contactar</button></article>
+      </div>
+    </section>
+
+    <section class="section" id="adminPreview">
+      <div class="section-title"><h2>Panel administrador preparado</h2><p>Vista demo para revisar cómo se administrarán cursos, usuarios, ventas y recursos.</p></div>
+      <div class="admin-board">
+        <aside><button data-admin="dashboard" class="active">Dashboard</button><button data-admin="courses">Cursos</button><button data-admin="sales">Ventas</button><button data-admin="settings">Ajustes</button></aside>
+        <div id="adminPanel"></div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contacto">
+      <h2>Listo para la siguiente fase</h2>
+      <p>La base visual y funcional ya queda ordenada. Después conectamos Supabase real, login, archivos, pagos y certificados.</p>
+      <a class="btn" href="https://wa.me/51999999999?text=Hola%20CampusHugo">Escribir por WhatsApp</a>
+    </section>
+  </main>
+
+  <div class="modal" id="loginModal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="close" id="closeLogin">×</button>
+      <h2>Ingresar</h2>
+      <p>Demo visual. La autenticación real se conecta en Supabase.</p>
+      <input id="email" value="admin@campushugo.com" />
+      <input id="pass" value="admin123" type="password" />
+      <button class="btn" id="loginBtn">Entrar demo</button>
+      <small>Usuario demo: admin@campushugo.com · clave: admin123</small>
+    </div>
+  </div>
+
+  <footer>© 2026 CampusHugo Pro · Plataforma en desarrollo profesional</footer>
+  <script src="js/app.js"></script>
+</body>
+</html>
