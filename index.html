@@ -3,79 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CampusHugo | Motor Interactivo</title>
+  <title>CampusHugo Pro - Motor Interactivo v4</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <header class="topbar">
-    <div class="brand"><span>CH</span><div><b>CampusHugo</b><small>Motor Interactivo Definitivo</small></div></div>
-    <nav>
-      <button data-view="home">Inicio</button>
-      <button data-view="learn">Aprender</button>
-      <button data-view="admin">Constructor</button>
-      <button data-view="stats">Progreso</button>
-    </nav>
+    <div class="brand"><span class="logo">CH</span><div><strong>CampusHugo Pro</strong><small>Motor interactivo v4</small></div></div>
+    <nav><button data-view="home">Inicio</button><button data-view="academy">Academia Excel</button><button data-view="admin">Admin</button><button data-view="progress">Progreso</button></nav>
   </header>
-
-  <main>
-    <section id="home" class="view active hero">
-      <div>
-        <p class="badge">OFICIAL • MOTOR INTERACTIVO v1</p>
-        <h1>Aprende Excel viendo, escuchando y practicando.</h1>
-        <p>Esta versión ya tiene reproductor de lecciones, tutor con voz, ejercicios interactivos, quiz, XP, progreso local y constructor inicial.</p>
-        <button class="primary" data-view="learn">Empezar lección</button>
-      </div>
-      <div class="phone-preview">
-        <div class="avatar">🤖</div>
-        <h3>Tutor IA</h3>
-        <p id="heroTip">Hola, soy tu guía. Te explicaré paso a paso qué hacer.</p>
-      </div>
-    </section>
-
-    <section id="learn" class="view">
-      <div class="section-head"><h2>Ruta Excel interactiva</h2><p>Básico → Intermedio → Avanzado</p></div>
-      <div id="lessonList" class="grid"></div>
-    </section>
-
-    <section id="lesson" class="view lesson-layout">
-      <aside class="tutor-card">
-        <div class="avatar big">🤖</div>
-        <h3>Profesor Hugo IA</h3>
-        <p id="tutorText">Selecciona reproducir para empezar.</p>
-        <button id="speakBtn">🔊 Escuchar guía</button>
-        <button id="repeatBtn">↻ Repetir paso</button>
-      </aside>
-      <article class="lesson-card">
-        <div class="progress"><span id="progressBar"></span></div>
-        <p class="badge" id="lessonLevel"></p>
-        <h2 id="lessonTitle"></h2>
-        <div id="blockStage"></div>
-        <div class="lesson-actions">
-          <button id="prevBlock">Anterior</button>
-          <button id="nextBlock" class="primary">Siguiente</button>
-        </div>
-      </article>
-    </section>
-
-    <section id="admin" class="view">
-      <div class="section-head"><h2>Constructor visual inicial</h2><p>Crea lecciones por bloques. En la siguiente fase se conectará con Supabase.</p></div>
-      <div class="admin-grid">
-        <form id="builderForm" class="panel">
-          <label>Título de lección<input id="newTitle" required placeholder="Ej: BUSCARX paso a paso" /></label>
-          <label>Nivel<select id="newLevel"><option>Básico</option><option>Intermedio</option><option>Avanzado</option></select></label>
-          <label>Mensaje del tutor<textarea id="newTutor" placeholder="Hola, hoy aprenderás..."></textarea></label>
-          <button class="primary">Guardar lección local</button>
-        </form>
-        <div class="panel"><h3>Bloques disponibles</h3><div class="chips"><span>🎥 Video</span><span>🖼 Imagen</span><span>📊 Excel simulado</span><span>❓ Quiz</span><span>🏆 XP</span><span>📁 Descarga</span></div><p>Esta es la base del constructor. Próxima fase: arrastrar bloques, editar contenido y guardar en Supabase.</p></div>
-      </div>
-    </section>
-
-    <section id="stats" class="view">
-      <div class="section-head"><h2>Tu progreso</h2><p>Guardado local para pruebas.</p></div>
-      <div class="stats"><div><b id="xp">0</b><span>XP</span></div><div><b id="done">0</b><span>Lecciones completadas</span></div><div><b id="level">1</b><span>Nivel</span></div></div>
-    </section>
-  </main>
-  <script src="data/lessons.js"></script>
+  <main id="app"></main>
+  <div id="toast"></div>
+  <script src="data/excel_curriculum.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
